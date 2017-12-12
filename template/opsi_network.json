@@ -1,0 +1,64 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+
+  },
+  "variables": {
+    "opsi_vnetPrefix": "10.0.0.0/16",
+    "opsi_vnetSubnet1Name": "web",
+    "opsi_vnetSubnet1Prefix": "10.0.1.0/24",
+    "opsi_vnetSubnet2Name": "biz",
+    "opsi_vnetSubnet2Prefix": "10.0.2.0/24",
+    "opsi_vnetSubnet3Name": "data",
+    "opsi_vnetSubnet3Prefix": "10.0.3.0/24",
+    "opsi_vnetSubnet4Name": "mgmt",
+    "opsi_vnetSubnet4Prefix": "10.0.4.0/24"
+  },
+
+  "resources": [
+    {
+      "name": "opsi_vnet",
+      "type": "Microsoft.Network/virtualNetworks",
+      "location": "[resourceGroup().location]",
+      "apiVersion": "2016-03-30",
+      "dependsOn": [ ],
+      "tags": {
+        "displayName": "opsi_vnet"
+      },
+      "properties": {
+        "addressSpace": {
+          "addressPrefixes": [
+            "[variables('opsi_vnetPrefix')]"
+          ]
+        },
+        "subnets": [
+          {
+            "name": "[variables('opsi_vnetSubnet1Name')]",
+            "properties": {
+              "addressPrefix": "[variables('opsi_vnetSubnet1Prefix')]"
+            }
+          },
+          {
+            "name": "[variables('opsi_vnetSubnet2Name')]",
+            "properties": {
+              "addressPrefix": "[variables('opsi_vnetSubnet2Prefix')]"
+            }
+          },
+          {
+            "name": "[variables('opsi_vnetSubnet3Name')]",
+            "properties": {
+              "addressPrefix": "[variables('opsi_vnetSubnet3Prefix')]"
+            }
+          },
+          {
+            "name": "[variables('opsi_vnetSubnet4Name')]",
+            "properties": {
+              "addressPrefix": "[variables('opsi_vnetSubnet4Prefix')]"
+            }
+          }
+        ]
+      }
+    }],
+  "outputs": {}
+}

@@ -1,0 +1,32 @@
+﻿{
+  "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "vmName": {
+      "value": "jb4"
+    },
+    "adminUsername": {
+      "value": "matper"
+    },
+    "sshPublicKey": {
+      "value": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDeGXbbwlyRK2Oho1RO7PgLLyNGGyxRPngrOm9Ym3mWfuBygBBJ0R8ZyWCap7hVDgHOq6IRk0zm/Hgma1wma+JVbK/JY0sskcW5dFRfF3G/dXWHX9vBjm8cFZBoJdNlnjY0aFbwz305dRsjewVBCYAsu6h5bkio4YGpbKOjppnltZukUsNWKERiq/OScVOLWZyv3Sgo8Moim6ZrtxBCsMFJs3FxVgAk8wjKak+MHnoVX49yrg+lHwNEzP31GnDuTgegxAUTdC2/1nJ1KvfONGdQdqa+PZy+RWsgConuP8LiXPzjFOJ+pWzgLNKrJeCEsszxQ9wc/Cet7iJS4hRc2ADt matper@MININT-T0QRB37!"
+    },
+    "vmSize": {
+      "value": "Standard_d2s_v3"
+    },
+    "virtualNetworkName": {
+      "value": "opsi_vnet"
+    },
+    "storageType": {
+      "value": "Premium_LRS"
+    },
+    "subnetName": {
+      "value": "mgmt"
+    },
+
+    "privateIPAddress": {
+      "value": "10.0.4.100"
+    }
+
+  }
+}
