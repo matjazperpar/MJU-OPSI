@@ -10,6 +10,9 @@
         },
         "privateIp": {
             "type": "string"
+        },
+        "publicIPAddressName": {
+            "type": "string"
         }
     },
     "variables": {},
@@ -25,6 +28,9 @@
                 "properties": {
                     "privateIPAllocationMethod": "Static",
                     "privateIPAddress": "[parameters('privateIp')]",
+                    "publicIPAddress": {
+                        "id": "[resourceId('Microsoft.Network/publicIPAddresses',parameters('publicIPAddressName'))]"
+                      },
                     "subnet": {
                         "id": "[parameters('SubnetRef')]"
                     }
