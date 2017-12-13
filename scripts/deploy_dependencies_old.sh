@@ -10,7 +10,7 @@ git clone https://gitlab.xlab.si/MJU-POPS/opsi-puppet-deploy.git /etc/puppet
 cd /etc/puppet/
 
 # Change to dev branch
-#git checkout development
+git checkout development
 
 #change deployment script to silent mode
 cat install_puppet_dependancies.sh | sed '/#set hostname/,+12 d' > install_dep_silently.sh 
@@ -19,4 +19,4 @@ cat install_puppet_dependancies.sh | sed '/#set hostname/,+12 d' > install_dep_s
 chmod +x install_dep_silently.sh
 
 #execute deployment
-#./install_dep_silently.sh
+./install_dep_silently.sh
